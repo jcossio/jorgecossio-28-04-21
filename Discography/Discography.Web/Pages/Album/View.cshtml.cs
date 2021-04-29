@@ -29,12 +29,10 @@ namespace Discography.Web.Pages.Album
         /// <summary>
         /// Page get operation
         /// </summary>
-        public void OnGet(int? AlbumId)
+        public void OnGet(int? id)
         {
-            // [TODO] Not getting the Album Id at this moment
-
             // Set the photos property for display
-            Photos = photosApi.GetPhotoDataByAlbum(1); // AlbumId);
+            Photos = photosApi.GetPhotoDataByAlbum(id.Value);
         }
 
         /// <summary>
