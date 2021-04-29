@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int}"
 @model Discography.Web.Pages.Album.ViewModel
 @{
     ViewData["Title"] = "Fotos del Álbum";
@@ -15,26 +15,26 @@
                     <img src="@photo.thumbnailUrl" class="img-fluid img-thumbnail" alt="@photo.title">
                 </td>
                 <td>
-                    <a class="btn btn-primary" href="/Comment/View/@photo.id" role="button" title="Ver Comentarios de la foto @photo.id">Ver Comentarios</a>
+                    <button id="buttonForPhoto_@photo.id" onclick="GetComments(@photo.id);" class="buttonForPhoto" type="button" class="btn btn-primary" href="#" role="button" title="Ver Comentarios de la foto @photo.id">Ver Comentarios</button>
+                    <div id="commentsForPhoto_@photo.id" class="commentsForPhoto"></div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-@*
-@foreach (var photo in Model.Photos)
-{
-    <div class="row">
-        <div class="col-lg-9">
-            <div>
-                <img src="@photo.thumbnailUrl" class="img-fluid img-thumbnail" alt="@photo.title">
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div>
-                <a class="btn btn-primary" href="/Comment/View/@photo.id" role="button" title="Ver Comentarios de la foto @photo.id">Ver Comentarios</a>
-            </div>
-        </div>
-    </div>
-}
-    *@
+<script>
+    function GetComments(photoId) {
+        var url = '@Url.Action("GetComments")'
+        $.ajax({
+            url: url,
+            data: { photoId },
+            type: "post",
+            success: function (Comments) {
+                $('#commentsForPhoto_' + photoId).html(Comments);
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+</script>
