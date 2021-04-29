@@ -1,0 +1,22 @@
+﻿@page "{id:int}"
+@model Discography.Web.Pages.Album.CommentsModel
+@{
+    // Do not display layout on the comments since it behaves like a partial page
+    Layout = null;
+}
+
+<table class="table table-striped">
+    <tbody>
+        @foreach (var comment in Model.Comments)
+        {
+            <tr>
+                <td>
+                    <p>@comment.name</p>
+                </td>
+                <td>
+                    <p>@comment.body</p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

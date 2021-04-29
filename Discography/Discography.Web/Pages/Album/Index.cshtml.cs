@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace Discography.Web.Pages.Album
 {
+    /// <summary>
+    /// Displays the list of Albums
+    /// </summary>
     public class IndexModel : PageModel
     {
         private readonly IAlbumsApi albumsApi;

@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace Discography.Infrastructure.Api
 {
+    /// <summary>
+    /// Photos API implementation
+    /// </summary>
     public class PhotosApi : IPhotosApi
     {
         private readonly RestClient _client = new RestClient("https://jsonplaceholder.typicode.com/photos");

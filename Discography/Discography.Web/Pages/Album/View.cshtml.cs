@@ -1,14 +1,15 @@
 using Discography.Domain.Api;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 
 namespace Discography.Web.Pages.Album
 {
+    /// <summary>
+    /// Display the photos for a specific album
+    /// </summary>
     public class ViewModel : PageModel
     {
         private readonly IPhotosApi photosApi;
-        private readonly ICommentsApi commentsApi;
 
         /// <summary>
         /// Model for the page
@@ -19,30 +20,20 @@ namespace Discography.Web.Pages.Album
         /// Page constructor. Inject the api service
         /// </summary>
         /// <param name="photosApi">Photos API</param>
-        public ViewModel(IPhotosApi photosApi, ICommentsApi commentsApi)
+        public ViewModel(IPhotosApi photosApi)
         {
             // Store it
             this.photosApi = photosApi;
-            this.commentsApi = commentsApi;
         }
 
         /// <summary>
-        /// Page get operation
+        /// Set the photos property based on album
         /// </summary>
+        /// <param name="id">Album Id</param>
         public void OnGet(int? id)
         {
             // Set the photos property for display
             Photos = photosApi.GetPhotoDataByAlbum(id.Value);
-        }
-
-        /// <summary>
-        /// Get the comments for a specified photo
-        /// </summary>
-        /// <param name="photoId">Photo Id</param>
-        /// <returns></returns>
-        public ActionResult GetComments(int photoId)
-        {
-            return new OkObjectResult(commentsApi.GetCommentDataByPhoto(photoId));
         }
     }
 }

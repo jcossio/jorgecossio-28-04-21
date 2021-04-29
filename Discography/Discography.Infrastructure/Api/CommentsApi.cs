@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace Discography.Infrastructure.Api
 {
+    /// <summary>
+    /// Comments API implementation
+    /// </summary>
     public class CommentsApi : ICommentsApi
     {
         private readonly RestClient _client = new RestClient("https://jsonplaceholder.typicode.com/comments");

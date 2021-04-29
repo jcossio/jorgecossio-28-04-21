@@ -15,29 +15,21 @@
                     <img src="@photo.thumbnailUrl" class="img-fluid img-thumbnail" alt="@photo.title">
                 </td>
                 <td>
-                    <button id="buttonForPhoto_@photo.id" onclick="javascript:GetComments(@photo.id);" class="buttonForPhoto" type="button" class="btn btn-primary" href="#" role="button" title="Ver Comentarios de la foto @photo.id">Ver Comentarios</button>
-                    <div id="commentsForPhoto_@photo.id" class="commentsForPhoto"></div>
+                    <button id="buttonForPhoto_@photo.id" onclick="javascript:GetComments(@photo.id);" type="button" class="btn btn-primary" href="#" role="button" title="Ver Comentarios de la foto @photo.id">Ver Comentarios</button>
+                    <div id="commentsForPhoto_@photo.id"></div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 <script>
+    /**
+     * Get the photo comments in a separate section
+     * int photoId Photo id.
+     */
     function GetComments(photoId) {
-        var url = '@Url.Action("GetComments")'
-        $('#commentsForPhoto_' + photoId).html('Sample Comments');
-        /*
-        $.ajax({
-            url: url,
-            data: { photoId },
-            type: "post",
-            success: function (Comments) {
-                $('#commentsForPhoto_' + photoId).html(Comments);
-            },
-            error: function () {
-                alert('error');
-            }
+        $.get('/Album/Comments/' + photoId, function (Comments) {
+            $('#commentsForPhoto_' + photoId).html(Comments);
         });
-        */
     }
 </script>

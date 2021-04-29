@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace Discography.Infrastructure.Api
 {
+    /// <summary>
+    /// Albums API implementation
+    /// </summary>
     public class AlbumsApi : IAlbumsApi
     {
         private readonly RestClient _client = new RestClient("https://jsonplaceholder.typicode.com/albums");
