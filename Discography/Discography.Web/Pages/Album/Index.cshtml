@@ -1,18 +1,23 @@
 ﻿@page
 @model Discography.Web.Pages.Album.IndexModel
 @{
-    ViewData["Title"] = "All Albums";
+    ViewData["Title"] = "Todos los Álbumes";
 }
 
-<h1>Albums</h1>
+<h1>Álbumes</h1>
 
 @foreach (var album in Model.Albums)
 {
-    <div class="row mb-lg-5">
-        <div class="col-lg-8">
-            <div>
-                <p>@album.title</p>
-            </div>
+<div class="row">
+    <div class="col-lg-9">
+        <div>
+            <p>@album.title</p>
         </div>
     </div>
+    <div class="col-lg-3">
+        <div>
+            <a class="btn btn-primary" href="/Album/View/@album.id" role="button" title="Visualizar Álbum @album.id">Visualizar Álbum</a>
+        </div>
+    </div>
+</div>
 }
