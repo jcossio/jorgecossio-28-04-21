@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discography.Web", "Discogra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discography.Domain", "Discography.Domain\Discography.Domain.csproj", "{65FB07BB-7A87-47B3-A444-88033F1EEB7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discography.Infrastructure", "Discography.Infrastructure\Discography.Infrastructure.csproj", "{3762FA58-C7A5-4088-BEE2-6C09099E3272}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{65FB07BB-7A87-47B3-A444-88033F1EEB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65FB07BB-7A87-47B3-A444-88033F1EEB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65FB07BB-7A87-47B3-A444-88033F1EEB7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3762FA58-C7A5-4088-BEE2-6C09099E3272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3762FA58-C7A5-4088-BEE2-6C09099E3272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3762FA58-C7A5-4088-BEE2-6C09099E3272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3762FA58-C7A5-4088-BEE2-6C09099E3272}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
