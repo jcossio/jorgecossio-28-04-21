@@ -15,7 +15,7 @@
                     <img src="@photo.thumbnailUrl" class="img-fluid img-thumbnail" alt="@photo.title">
                 </td>
                 <td>
-                    <button id="buttonForPhoto_@photo.id" onclick="GetComments(@photo.id);" class="buttonForPhoto" type="button" class="btn btn-primary" href="#" role="button" title="Ver Comentarios de la foto @photo.id">Ver Comentarios</button>
+                    <button id="buttonForPhoto_@photo.id" onclick="javascript:GetComments(@photo.id);" class="buttonForPhoto" type="button" class="btn btn-primary" href="#" role="button" title="Ver Comentarios de la foto @photo.id">Ver Comentarios</button>
                     <div id="commentsForPhoto_@photo.id" class="commentsForPhoto"></div>
                 </td>
             </tr>
@@ -25,6 +25,8 @@
 <script>
     function GetComments(photoId) {
         var url = '@Url.Action("GetComments")'
+        $('#commentsForPhoto_' + photoId).html('Sample Comments');
+        /*
         $.ajax({
             url: url,
             data: { photoId },
@@ -36,5 +38,6 @@
                 alert('error');
             }
         });
+        */
     }
 </script>
