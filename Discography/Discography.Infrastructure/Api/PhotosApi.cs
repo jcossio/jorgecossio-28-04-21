@@ -1,4 +1,5 @@
-﻿using Discography.Domain.Models;
+﻿using Discography.Domain.Api;
+using Discography.Domain.Models;
 using Newtonsoft.Json;
 using RestSharp;
 using System.Collections.Generic;

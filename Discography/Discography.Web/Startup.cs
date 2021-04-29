@@ -1,3 +1,5 @@
+using Discography.Domain.Api;
+using Discography.Infrastructure.Api;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +25,11 @@ namespace Discography.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            // Set the API implementations
+            services.AddTransient<IAlbumsApi, AlbumsApi>();
+            services.AddTransient<IPhotosApi, PhotosApi>();
+            services.AddTransient<ICommentsApi, CommentsApi>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,18 @@
+﻿@page
+@model Discography.Web.Pages.Album.IndexModel
+@{
+    ViewData["Title"] = "All Albums";
+}
+
+<h1>Albums</h1>
+
+@foreach (var album in Model.Albums)
+{
+    <div class="row mb-lg-5">
+        <div class="col-lg-8">
+            <div>
+                <p>@album.title</p>
+            </div>
+        </div>
+    </div>
+}

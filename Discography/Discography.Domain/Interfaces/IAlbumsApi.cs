@@ -1,7 +1,7 @@
 ﻿using Discography.Domain.Models;
 using System.Collections.Generic;
 
-namespace Discography.Infrastructure.Api
+namespace Discography.Domain.Api
 {
     public interface IAlbumsApi
     {
